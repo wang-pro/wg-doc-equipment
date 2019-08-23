@@ -1,1 +1,19 @@
+server:
+  port: 9006
+  servlet:
+    context-path: /doc-equipment-api
 
+spring:
+  application:
+    name: doc-equipment
+  profiles:
+    active: dev
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:9000/eureka/
