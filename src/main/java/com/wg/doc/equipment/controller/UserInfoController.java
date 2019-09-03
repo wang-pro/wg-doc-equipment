@@ -2,8 +2,7 @@ package com.wg.doc.equipment.controller;
 
 import com.wg.doc.base.domain.ResultVo;
 import com.wg.doc.base.enums.StatusCode;
-import com.wg.doc.equipment.entity.EquipmentInfo;
-import com.wg.doc.equipment.service.UserInfoService;
+import com.wg.doc.equipment.client.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
