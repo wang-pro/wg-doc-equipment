@@ -2,13 +2,11 @@ package com.wg.doc.equipment.controller;
 
 import com.wg.doc.base.domain.ResultVo;
 import com.wg.doc.base.enums.StatusCode;
-import com.wg.doc.equipment.client.UserInfoService;
+import com.wg.doc.equipment.service.UserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,14 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserInfoController {
 
     @Autowired
-    private UserInfoService userInfoService;
+    private UserService userService;
 
-    @GetMapping("/{id}")
+    @GetMapping("")
     @ApiOperation(value="停车场数据每小时汇报", notes="停车场数据每小时汇报")
-    @ApiImplicitParam(paramType = "path", dataType = "Long", name = "id", value = "id", required = true)
-    public ResultVo<Object> getCustomerByAge(@PathVariable long id) {
+    public ResultVo<Object> getCustomerByAge() {
         ResultVo<Object> resultVo = new ResultVo<>();
-        resultVo.setData(userInfoService.getUser(id));
+        resultVo.setData(userService.test());
         resultVo.setCode(StatusCode.SUCCESS.getCode());
         resultVo.setMsg(StatusCode.SUCCESS.getMessage());
         return resultVo;
