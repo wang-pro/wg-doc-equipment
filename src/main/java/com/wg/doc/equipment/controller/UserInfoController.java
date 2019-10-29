@@ -1,7 +1,6 @@
 package com.wg.doc.equipment.controller;
 
-import com.wg.doc.base.domain.ResultVo;
-import com.wg.doc.base.enums.StatusCode;
+import com.wg.doc.base.result.Result;
 import com.wg.doc.equipment.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,11 +20,7 @@ public class UserInfoController {
 
     @GetMapping("")
     @ApiOperation(value="停车场数据每小时汇报", notes="停车场数据每小时汇报")
-    public ResultVo<Object> getCustomerByAge() {
-        ResultVo<Object> resultVo = new ResultVo<>();
-        resultVo.setData(userService.test());
-        resultVo.setCode(StatusCode.SUCCESS.getCode());
-        resultVo.setMsg(StatusCode.SUCCESS.getMessage());
-        return resultVo;
+    public Result<Object> getCustomerByAge() {
+        return Result.success(userService.test());
     }
 }

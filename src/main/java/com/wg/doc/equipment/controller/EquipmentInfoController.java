@@ -1,8 +1,7 @@
 package com.wg.doc.equipment.controller;
 
 
-import com.wg.doc.base.domain.ResultVo;
-import com.wg.doc.base.enums.StatusCode;
+import com.wg.doc.base.result.Result;
 import com.wg.doc.equipment.entity.EquipmentInfo;
 import com.wg.doc.equipment.service.EquipmentInfoService;
 import io.swagger.annotations.Api;
@@ -30,12 +29,8 @@ public class EquipmentInfoController {
     @GetMapping("/{id}")
     @ApiOperation(value="停车场数据每小时汇报", notes="停车场数据每小时汇报")
     @ApiImplicitParam(paramType = "path", dataType = "Long", name = "id", value = "id", required = true)
-    public ResultVo<EquipmentInfo> getCustomerByAge(@PathVariable long id) {
-        ResultVo<EquipmentInfo> resultVo = new ResultVo<>();
-        resultVo.setData(equipmentInfoService.getEquipment(id));
-        resultVo.setCode(StatusCode.SUCCESS.getCode());
-        resultVo.setMsg(StatusCode.SUCCESS.getMessage());
-        return resultVo;
+    public Result<EquipmentInfo> getCustomerByAge(@PathVariable long id) {
+        return Result.success(equipmentInfoService.getEquipment(id));
     }
 
 }
