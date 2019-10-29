@@ -27,7 +27,7 @@ public class EquipmentInfoController {
     private EquipmentInfoService equipmentInfoService;
 
     @GetMapping("/{id}")
-    @ApiOperation(value="停车场数据每小时汇报", notes="停车场数据每小时汇报")
+    @ApiOperation(value="info", notes="info")
     @ApiImplicitParam(paramType = "path", dataType = "Long", name = "id", value = "id", required = true)
     public Result<EquipmentInfo> getCustomerByAge(@PathVariable long id) {
         return Result.success(equipmentInfoService.getEquipment(id));

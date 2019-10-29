@@ -19,7 +19,7 @@ public class UserInfoController {
     private UserService userService;
 
     @GetMapping("")
-    @ApiOperation(value="停车场数据每小时汇报", notes="停车场数据每小时汇报")
+    @ApiOperation(value="user", notes="user")
     public Object getCustomerByAge() {
         return userService.test();
     }
